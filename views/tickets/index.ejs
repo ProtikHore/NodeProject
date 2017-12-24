@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title></title>
+</head>
+<body>
+	<h2>Ticket Purchase</h2>
+	<a href="/home">Back</a>
+	<br/><br/>
+	<table border="1">
+		<tr>
+			<th>bandName</th>
+			<th>concertNo</th>
+			<th>concertName</th>
+			<th>concertDateTime</th>
+			<th>concertVenue</th>
+			<th>ticketQuantity</th>
+			<th>perTicketPrice</th>
+		</tr>
+		<% for(var i = 0; i < catList.length; i++) {%>
+		<tr>
+			<td><%= catList[i].bandName %></td>
+			<td><%= catList[i].concertNo %></td>
+			<td><%= catList[i].concertName %></td>
+			<td><%= catList[i].concertDateTime %></td>
+			<td><%= catList[i].concertVenue %></td>
+			<td><%= catList[i].ticketQuantity %></td>
+			<td><%= catList[i].perTicketPrice %></td>
+			<td><a href="/tickets/purchase/<%= catList[i].concertNo %>">Purchase</a>
+		</tr>
+		<% } %>
+	</table>
+</body>
+</html>

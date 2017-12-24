@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title></title>
+
+	<script type='text/javascript'>
+	  function changeTotal()
+	  {
+		    var price = document.getElementById('price').value;
+		    var quantity = document.getElementById('quantity').value;
+
+		    var total = document.getElementById('totalPrice');
+		    var totalPrice = price * quantity;
+		    total.innerHTML = totalPrice;
+				document.getElementById('tprice').value = totalPrice;
+		    //alert(totalPrice);
+	  }
+ </script>
+
+
+</head>
+<body>
+	<h2>Edit Category</h2>
+	<a href="/home">Back to Home</a>
+	<br/><br/>
+		<form method="post">
+			<input type="hidden" name="concertno" value="<%= concertNo %>">
+			<input type="hidden" name="concertname" value="<%= concertName %>">
+			<input type="hidden" name="concertdatetime" value="<%= concertDateTime %>">
+			<input type="hidden" name="concertvanue" value="<%= concertVenue %>">
+			<input type="hidden" name="ticketquantity" value="<%= ticketQuantity %>">
+			<input type="hidden" name="ticketprice" value="<%= perTicketPrice %>" id = "price">
+			<table>
+				<tr>
+					<td>Band Name</td>
+					<td><%= bandName %></td>
+				</tr>
+        <tr>
+					<td>Concert Name</td>
+					<td><%= concertName %></td>
+				</tr>
+				<tr>
+					<td>Date & Time</td>
+					<td><%= concertDateTime %></td>
+				</tr>
+				<tr>
+					<td>Venue</td>
+					<td><%= concertVenue %></td>
+				</tr>
+				<tr>
+					<td>Ticket Price</td>
+					<td><%= perTicketPrice %></td>
+				</tr>
+				<tr>
+					<td>NAME</td>
+					<td><input type="text" name="name"></td>
+				</tr>
+				<tr>
+					<td>Email</td>
+					<td><input type="text" name="email"></td>
+				</tr>
+				<tr>
+					<td>Mobile No</td>
+					<td><input type="text" name="mobile"></td>
+				</tr>
+				<tr>
+					<td>Quantity</td>
+					<td>
+						<select name = "num" id = "quantity" onchange = "changeTotal()">
+							<option value="0">0</option>
+							<option value="1">1</option>
+						 	<option value="2">2</option>
+							<option value="3">3</option>
+						</select>
+					</td>
+				</tr>
+				<tr>
+					<td>Total PRICE:</td>
+					<td><input type = "hidden" name = "totalPrice" id = "tprice"><label id = "totalPrice"> 0 </label></td>
+				</tr>
+				<tr>
+					<td></td>
+					<td><input type="submit" value="Confirm"></td>
+				</tr>
+			</table>
+		</form>
+</body>
+</html>
